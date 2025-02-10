@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+        }
+
+        h1 {
+            color: #ff4da6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4da6;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+        .hidden-content img {
+            width: 250px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .image-container {
+            display: inline-block;
+            position: relative;
+            margin: 10px;
+        }
+
+        .image-container img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .small-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Page Hidden Content Styles */
+        .page-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1 -->
+    <div id="page1" class="page-hidden">
+        <h1>💖 Tap Here for Your Gift 💖</h1>
+        <a href="javascript:void(0)" onclick="showPage(2)"><button class="button">Tap Here for Your Gift</button></a>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page-hidden">
+        <h1>🎁 ❤️ </h1>
+        <div class="hidden-content">
+            <img src="teddy.jpeg" alt="Teddy">
+        </div>
+        <a href="javascript:void(0)" onclick="showPage(3)"><button class="button">Tap Here for Cuter Teddy</button></a>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="page-hidden">
+        <h1>Cuty❤️🫠</h1>
+
+        <div class="image-container">
+            <img src="amisha.jpeg" alt="Cuter Teddy">
+            <p class="small-text"></p>
+        </div>
+       
+        <script>
+        // Show the first page on load
+        window.onload = function() {
+            showPage(1);
+        }
+
+        // Function to show specific page
+        function showPage(pageNumber) {
+            // Hide all pages
+            var pages = document.querySelectorAll('.page-hidden');
+            pages.forEach(function(page) {
+                page.style.display = 'none';
+            });
+
+            // Show the selected page
+            document.getElementById('page' + pageNumber).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
